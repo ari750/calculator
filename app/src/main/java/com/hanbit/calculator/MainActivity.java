@@ -7,11 +7,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.hanbit.calculator.domain.CalcDTO;
+import com.hanbit.calculator.service.CalcService;
+import com.hanbit.calculator.service.CalcServiceImpl;
+
 public class MainActivity extends AppCompatActivity implements  View.OnClickListener{
     EditText etNum1, etNum2;
     Button btPlus, btMinus, btMul, btDiv, btMod, btEqual;
     TextView tvResult;
     int result;
+    CalcService servcie;
+    CalcDTO cal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         btMul.setOnClickListener(this);
         btDiv.setOnClickListener(this);
         btEqual.setOnClickListener(this);
+        servcie = new CalcServiceImpl();
+        cal = new CalcDTO();
     }
 
     @Override
@@ -37,22 +45,24 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
 
         int num1 = Integer.parseInt(etNum1.getText().toString());
         int num2 = Integer.parseInt(etNum2.getText().toString());
+        cal.setNum1(num1);
+        cal.setNum2(num2);
 
         switch (v.getId()){
             case R.id.btPlus:
-                result = num1+num2;
+                result = servcie.plus(cal);
                 break;
             case R.id.btMinus:
-                result = num1-num2;
+                result = servcie.minus(cal);
                 break;
             case R.id.btMul:
-                result = num1*num2;
+                result =servcie.multi(cal);
                 break;
             case R.id.btDiv:
-                result = num1/num2;
+                result = servcie.divid(cal);
                 break;
             case R.id.btMod:
-                result = num1%num2;
+                result = servcie.mod(cal);
                 break;
             case R.id.btEqual:
                 tvResult.setText("RESULT :"+result);
