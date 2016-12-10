@@ -1,0 +1,88 @@
+2008년 iphone
+2009sus goolge - android(오픈소스)
+samsung 스마트폰 출시
+
+java
+oop 개념 : 객체지향언어은 상추다.
+-- Object Oriented Programming(4)
+-(1)Encapsulation 클래스를 은닉화해라
+-(2)Inheritance 클래스를 상속구조로 작성해라
+-(3)Abstraction 인터페이스를 통한 추상화를 하라
+-(4)Poly Morphism 다형성을 염두에 두고 클래스를 작성하라
+
+MVC 패턴: Web서버 구축시
+- Model(서버)
+- View(화면)
+- Controller(데이터전송)
+
+MVVM 패턴: App서버 구축시
+- Model(서버)
+- View(화면)
+- ViewModel(일체화 된 데이터전송)
+
+
+설정 패키지
+1.JDK: Java 8
+2.SDK, ADT:Android studio(IDE) 2.2.2
+3.Emulator : Genymotion 2.8.1
+4.Version Control: Git 2.1 64bit
+
+Shortcuts
+Win+R> cmd> java -version
+CAS: Ctr + Alt + S
+-1.Auto Import, check All
+-2.Appearance, show line numbers
+-3.Genymotion,
+
+Go line :Ctrl + g
+Copy line :Ctrl +d
+Delte line:Ctrl + y
+Auto Complie :Alt + Enter
+Auto Import:Alt + Insert
+
+Convention Naming :
+대...대...:Pascal -> 클래스/인터페이스
+소...대...:Carmale 낙타표기법/변수
+under score: Static Source 표기법
+
+1.Obejct는 속성(prorerty)과 기능(method)의 합니다.
+2.property는 filed에 존재하고
+3.method는 area에 존재한다.
+
+field는 속성을 담당하므로 연산을 하지 않고, 선언만 한다.
+area는 기능을 담당하므로 반드시 연산을 해야한다.
+
+Java 선언하는 방법
+class ID{}
+void ID(){}
+switch(){}, for(){}, if(){}
+
+--Github
+When Create
+git init
+git add -A
+git config --global user.email "ari750@daum.net"
+git config --global user.name "ari750"
+git commit -m "first commit"
+git remote add origin https://github.com/ari750/calculator.git
+git push -u origin master
+
+When Update
+git add -A
+git commit -m "final commit"
+git push -u origin master
+
+
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RESULT"/>
+
+</LinearLayout>
